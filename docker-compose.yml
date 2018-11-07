@@ -9,7 +9,7 @@ services:
       - dados:/var/lib/postgresql/data
       # Scripts
       - ./scripts:/scripts
-      - ./scripts/init.sql:/docker-entrypoint-initdb/init.sql
+      - ./scripts/init.sql:/docker-entrypoint-initd.b/init.sql
   frontend:
     image: nginx:1.13
     volumes:
