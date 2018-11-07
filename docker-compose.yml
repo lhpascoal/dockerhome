@@ -8,5 +8,12 @@ services:
       # Volumes dos dados
       - dados:/var/lib/postgresql/data
       # Scripts
-      - ./scripts:scripts
-      - ./scripts/init.sql:/docker-entrypoint-initdb/init.sqlaa
+      - ./scripts:/scripts
+      - ./scripts/init.sql:/docker-entrypoint-initdb/init.sql
+  frontend:
+    image: nginx:1.13
+    volumes:
+      #
+      - ./web:/usr/share/nginx/html
+    ports:
+      - 80:80
